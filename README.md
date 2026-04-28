@@ -1,37 +1,66 @@
-# Library API 📚
+# 📘 Library API — FastAPI + MySQL + Docker
 
-API RESTful de gestion de bibliothèque développée avec FastAPI, SQLAlchemy et MySQL.
+## 🚀 Description du projet
 
-## Fonctionnalités
+Library API est une application backend développée avec **FastAPI**, **SQLAlchemy** et **MySQL**, permettant la gestion complète d’un système de bibliothèque.
 
-- **Gestion des livres** : CRUD complet, recherche par titre
-- **Gestion des auteurs** : CRUD, consultation des livres par auteur
-- **Gestion des catégories** : Classification des livres
-- **Gestion des utilisateurs** : Inscription avec carte de bibliothèque automatique
-- **Système d'emprunts** : Création, retour, historique
+Elle permet de gérer :
 
-## Relations implémentées
+- 📚 Livres
+- ✍️ Auteurs
+- 🏷️ Catégories
+- 👤 Utilisateurs
+- 📖 Emprunts
 
-| Type | Entités |
-|------|---------|
-| One-to-One | User ↔ LibraryCard |
-| One-to-Many | Author → Book |
-| Many-to-Many | Book ↔ Category |
+---
 
-## Prérequis
+## 🧠 Objectifs techniques
 
-- Docker et Docker Compose
+Ce projet met en œuvre des concepts avancés de développement backend :
 
-## Lancement
+- Architecture en couches :
+  - Routers (API)
+  - Services (logique métier)
+  - Repositories (accès aux données)
 
-```bash
-# Cloner le dépôt
-git clone [github.com](https://github.com/votre-compte/library-api.git)
+- Relations de base de données :
+  - One-to-One (User ↔ LibraryCard)
+  - One-to-Many (Author → Book)
+  - Many-to-Many (Book ↔ Category)
+
+- API REST complète
+- Validation avec Pydantic
+- Conteneurisation avec Docker & Docker Compose
+- Base de données MySQL
+
+---
+
+## Architecture 
+
+app/
+├── main.py            # Point d’entrée FastAPI
+├── models/            # Modèles SQLAlchemy
+├── schemas/           # DTOs Pydantic
+├── repositories/      # Accès aux données
+├── services/          # Logique métier
+├── routers/           # Endpoints API
+├── exceptions/        # Gestion des erreurs
+
+## 🐳 Lancer le projet avec Docker
+
+# 1️⃣ Cloner le projet
+
+### bash
+git clone https://github.com/Moudou3/library-api.git
 cd library-api
 
-# Lancer l'application
+# 2️⃣ Lancer les services
 docker compose up --build
 
-# L'API est disponible sur [localhost](http://localhost:8000)
-# Documentation Swagger : [localhost](http://localhost:8000/docs)
-# Documentation ReDoc : [localhost](http://localhost:8000/redoc)
+# 3️⃣ Accéder à l’application
+Dans le terminal uvicorn app.main:app --reload
+
+Swagger UI : http://localhost:8000/docs
+
+# 4️⃣ Arrêter le projet
+docker compose down
