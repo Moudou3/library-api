@@ -27,6 +27,7 @@ Ce projet met en œuvre des concepts avancés de développement backend :
   - One-to-One (User ↔ LibraryCard)
   - One-to-Many (Author → Book)
   - Many-to-Many (Book ↔ Category)
+Diagram --> dans Diagram.png
 
 - API REST complète
 - Validation avec Pydantic
@@ -64,3 +65,4 @@ Swagger UI : http://localhost:8000/docs
 
 # 4️⃣ Arrêter le projet
 docker compose down
+
