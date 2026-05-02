@@ -26,7 +26,7 @@ services:
       - "3307:3306"
     volumes:
       - library_data:/var/lib/mysql
- #     - ./scripts/init_data.sql:/docker-entrypoint-initdb.d/init_data.sql
+      - ./scripts/init_data.sql:/docker-entrypoint-initdb.d/init_data.sql
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 10s

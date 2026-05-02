@@ -63,6 +63,16 @@ Dans le terminal uvicorn app.main:app --reload
 
 Swagger UI : http://localhost:8000/docs
 
+## 🐳 Image Docker Hub
+
+L'image est disponible sur Docker Hub :
+https://hub.docker.com/r/moudou/library-api-api
+
+### Lancer l'image en local :
+docker pull moudou/library-api-api
+
+docker run -p 8000:8000 moudou/library-api-api
+
 # 4️⃣ Arrêter le projet
 docker compose down
 
