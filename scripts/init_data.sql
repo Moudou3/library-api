@@ -1,5 +1,50 @@
 -- Données de test initiales
+CREATE TABLE IF NOT EXISTS authors (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(200) NOT NULL,
+    biography TEXT
+);
 
+CREATE TABLE IF NOT EXISTS categories (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    description TEXT
+);
+
+CREATE TABLE IF NOT EXISTS books (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    isbn VARCHAR(13) UNIQUE NOT NULL,
+    title VARCHAR(300) NOT NULL,
+    publication_year INT,
+    quantity INT DEFAULT 1,
+    author_id INT NOT NULL,
+    FOREIGN KEY (author_id) REFERENCES authors(id)
+);
+
+CREATE TABLE IF NOT EXISTS book_category (
+    book_id INT,
+    category_id INT,
+    PRIMARY KEY (book_id, category_id),
+    FOREIGN KEY (book_id) REFERENCES books(id),
+    FOREIGN KEY (category_id) REFERENCES categories(id)
+);
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    first_name VARCHAR(100) NOT NULL,
+    last_name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS library_cards (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    card_number VARCHAR(50) UNIQUE NOT NULL,
+    issue_date DATE NOT NULL,
+    expiry_date DATE NOT NULL,
+    user_id INT UNIQUE NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
 -- Auteurs
 INSERT INTO authors (id, name, biography) VALUES
 (1, 'Victor Hugo', 'Écrivain français du XIXe siècle, auteur des Misérables.'),

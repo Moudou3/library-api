@@ -47,6 +47,37 @@ app/
 ├── routers/           # Endpoints API
 ├── exceptions/        # Gestion des erreurs
 
+# Mot de passe et username de la base de donnée 
+commande pour voir la base de donnée de teste : docker exec -it library-db mysql -u library_user -p
+mot de passe : library_pass
+
+testez les requetes suivantes : 
+USE librarydb;
+SELECT * FROM books;
+
+## 📡 Exemples de routes
+
+  # Créer un utilisateur
+POST /api/users
+{
+  "email": "john@example.com",
+  "password": "1234",
+  "first_name": "John",
+  "last_name": "Doe"
+}
+
+   # Récupérer tous les livres
+GET /api/books
+
+  # Créer un emprunt
+POST /api/loans
+{
+  "user_id": 1,
+  "book_id": 1,
+  "loan_date": "2024-01-01",
+  "due_date": "2024-01-15"
+}
+
 ## 🐳 Lancer le projet avec Docker
 
 # 1️⃣ Cloner le projet
@@ -72,6 +103,8 @@ https://hub.docker.com/r/moudou/library-api-api
 docker pull moudou/library-api-api
 
 docker run -p 8000:8000 moudou/library-api-api
+
+
 
 # 4️⃣ Arrêter le projet
 docker compose down
