@@ -1,4 +1,4 @@
-# 📘 Library API — FastAPI + MySQL + Docker
+# Library API — FastAPI + MySQL + Docker
 
 ## 🚀 Description du projet
 
@@ -14,7 +14,7 @@ Elle permet de gérer :
 
 ---
 
-## 🧠 Objectifs techniques
+## Objectifs techniques
 
 Ce projet met en œuvre des concepts avancés de développement backend :
 
@@ -37,9 +37,8 @@ Diagram → dans `diagram.png`
 
 ---
 
-## 🗂️ Architecture
+## Architecture
 
-```
 app/
 ├── main.py            # Point d'entrée FastAPI
 ├── models/            # Modèles SQLAlchemy
@@ -55,41 +54,40 @@ tests/
 ├── test_books.py
 ├── test_users.py
 ├── test_loans.py
-```
 
 ---
 
-## 🐳 Lancer le projet avec Docker
+## Lancer le projet avec Docker
 
-### 1️⃣ Cloner le projet
+###  Cloner le projet
 --> bash
 git clone https://github.com/Moudou3/library-api.git
 cd library-api
 
-### 2️⃣ Lancer les services
+###  Lancer les services
 --> bash
 docker compose up --build
 
 
-### 3️⃣ Accéder à l'application
+###  Accéder à l'application
 - Swagger UI : http://localhost:8000/docs
 
-### 4️⃣ Arrêter le projet
+###  Arrêter le projet
 --> bash
 docker compose down
 
 
-### 5️⃣ Reset complet de la base de données
+###  Reset complet de la base de données
 --> bash
 docker compose down -v
 docker compose up --build
 
 
-> ℹ️ Les données de test sont chargées automatiquement au premier démarrage via `scripts/init_data.sql`
+> Les données de test sont chargées automatiquement au premier démarrage via `scripts/init_data.sql`
 
-> ⚠️ Supprimer le `-v` si vous ne voulez pas perdre vos données existantes
+> Supprimer le `-v` si vous ne voulez pas perdre vos données existantes
 
-## 🗄️ Vérifier la base de données
+## Vérifier la base de données
 
 --> bash
 docker exec -it library-db mysql -u library_user -p
@@ -108,7 +106,7 @@ SELECT * FROM loans;
 
 > ⚠️ Respecter l'ordre suivant pour les tests car chaque ressource dépend de la précédente.
 
-### 1️⃣ Auteurs — `AUTHORS`
+### Auteurs — `AUTHORS`
 
 ---
 POST   /api/authors          Créer un auteur
@@ -126,7 +124,7 @@ Exemple POST :
 
 ---
 
-### 2️⃣ Catégories — `CATEGORIES`
+### Catégories — `CATEGORIES`
 
 ---
 POST   /api/categories        Créer une catégorie
@@ -146,7 +144,7 @@ Exemple POST :
 
 ---
 
-### 3️⃣ Livres — `BOOKS`
+### Livres — `BOOKS`
 
 POST   /api/books        Créer un livre
 GET    /api/books        Récupérer tous les livres
@@ -165,7 +163,7 @@ Exemple POST :
 }
 
 
-### 4️⃣ Utilisateurs — `USERS`
+### Utilisateurs — `USERS`
 
 ---
 POST   /api/users              Créer un utilisateur
@@ -200,7 +198,7 @@ Exemple POST :
   "due_date": "2024-02-20"
 }
 
-## ✅ Lancer les tests automatisés
+##  Lancer les tests automatisés
 
 -->bash
 pip install pytest httpx
@@ -217,4 +215,4 @@ docker pull moudou/library-api-api
 
 > ⚠️ L'API nécessite MySQL. Utiliser Docker Compose pour lancer le projet complet.
 
-> 📦 Un volume Docker `library_data` est utilisé pour la persistance des données MySQL.
+> Un volume Docker `library_data` est utilisé pour la persistance des données MySQL.

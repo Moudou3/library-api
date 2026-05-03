@@ -1,4 +1,4 @@
--- Données de test initiales
+-- Données de test initiales Base de donnée de Test de l'API
 CREATE TABLE IF NOT EXISTS authors (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(200) NOT NULL,
