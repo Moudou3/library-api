@@ -1,6 +1,6 @@
 # Library API — FastAPI + MySQL + Docker
 
-## 🚀 Description du projet
+## Description du projet
 
 Library API est une application backend développée avec **FastAPI**, **SQLAlchemy** et **MySQL**, permettant la gestion complète d'un système de bibliothèque.
 
@@ -102,9 +102,9 @@ SELECT * FROM users;
 SELECT * FROM loans;
 
 
-## 📡 Routes de l'API
+## Routes de l'API
 
-> ⚠️ Respecter l'ordre suivant pour les tests car chaque ressource dépend de la précédente.
+>  Respecter l'ordre suivant pour les tests car chaque ressource dépend de la précédente.
 
 ### Auteurs — `AUTHORS`
 
@@ -181,7 +181,7 @@ Exemple POST :
   "last_name": "Dupont"
 }
 
-### 5️⃣ Emprunts — `LOANS`
+###  Emprunts — `LOANS`
 ---
 POST /api/loans              Créer un emprunt
 GET  /api/loans              Récupérer tous les emprunts
