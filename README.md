@@ -110,6 +110,7 @@ SELECT * FROM loans;
 
 ---
 POST   /api/authors          Créer un auteur
+
 GET    /api/authors          Récupérer tous les auteurs
 GET    /api/authors/{id}     Récupérer un auteur spécifique
 DELETE /api/authors/{id}     Supprimer un auteur
