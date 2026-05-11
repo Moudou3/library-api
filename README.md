@@ -127,10 +127,10 @@ Exemple POST :
 ### Catégories — `CATEGORIES`
 
 ---
-POST   /api/categories        Créer une catégorie
-GET    /api/categories        Récupérer toutes les catégories
-GET    /api/categories/{id}   Récupérer une catégorie spécifique
-DELETE /api/categories/{id}   Supprimer une catégorie
+POST   /api/categories       : Créer une catégorie
+GET    /api/categories       : Récupérer toutes les catégories
+GET    /api/categories/{id}  : Récupérer une catégorie spécifique
+DELETE /api/categories/{id}  : Supprimer une catégorie
 ---
 
 
@@ -204,7 +204,7 @@ Exemple POST :
 pip install pytest httpx
 pytest tests/
 
-## 🐳 Image Docker Hub
+## Image Docker Hub
 
 L'image est disponible sur Docker Hub :
 https://hub.docker.com/r/moudou/library-api-api
