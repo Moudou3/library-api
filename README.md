@@ -41,18 +41,31 @@ Diagram → dans `diagram.png`
 
 app/
 ├── main.py            # Point d'entrée FastAPI
+
 ├── models/            # Modèles SQLAlchemy
+
 ├── schemas/           # DTOs Pydantic
+
 ├── repositories/      # Accès aux données
+
 ├── services/          # Logique métier
+
 ├── routers/           # Endpoints API
+
 ├── exceptions/        # Gestion des erreurs
+
 scripts/
+
 ├── init_data.sql      # Données de test initiales (chargées automatiquement)
+
 ├── seed.py            # Script de seed alternatif
+
 tests/
+
 ├── test_books.py
+
 ├── test_users.py
+
 ├── test_loans.py
 
 ---
@@ -61,25 +74,32 @@ tests/
 
 ###  Cloner le projet
 --> bash
+
 git clone https://github.com/Moudou3/library-api.git
+
 cd library-api
 
 ###  Lancer les services
 --> bash
+
 docker compose up --build
 
 
 ###  Accéder à l'application
+
 - Swagger UI : http://localhost:8000/docs
 
 ###  Arrêter le projet
 --> bash
+
 docker compose down
 
 
 ###  Reset complet de la base de données
 --> bash
+
 docker compose down -v
+
 docker compose up --build
 
 
@@ -90,6 +110,7 @@ docker compose up --build
 ## Vérifier la base de données
 
 --> bash
+
 docker exec -it library-db mysql -u library_user -p
 
 Mot de passe : `library_pass`
@@ -124,7 +145,9 @@ DELETE /api/authors/{id}     Supprimer un auteur
 ---
 
 Exemple POST :
+
 -->json
+
 {
   "name": "Victor Hugo",
   "biography": "Écrivain français du XIXe siècle"
@@ -147,7 +170,9 @@ DELETE /api/categories/{id}   Supprimer une catégorie
 
 
 Exemple POST :
+
 -->json
+
 {
   "name": "Roman",
   "description": "Œuvres de fiction"
@@ -167,7 +192,9 @@ GET    /api/books/{id}   Récupérer un livre spécifique
 DELETE /api/books/{id}   Supprimer un livre
 
 Exemple POST :
+
 -->json
+
 {
   "isbn": "9782070409228",
   "title": "Les Misérables",
@@ -190,9 +217,12 @@ GET    /api/users/{id}         Récupérer un utilisateur spécifique
 GET    /api/users/{id}/loans   Récupérer les emprunts d'un utilisateur
 
 DELETE /api/users/{id}         Supprimer un utilisateur
+
 --
 Exemple POST :
+
 -->json
+
 {
   "email": "jean.dupont@email.com",
   "password": "1234",
@@ -212,7 +242,9 @@ PUT  /api/loans/{id}/return  Retourner un livre
 
 
 Exemple POST :
+
 -->json
+
 {
   "user_id": 1,
   "book_id": 1,
@@ -223,7 +255,9 @@ Exemple POST :
 ##  Lancer les tests automatisés
 
 -->bash
+
 pip install pytest httpx
+
 pytest tests/
 
 =======
@@ -233,6 +267,7 @@ L'image est disponible sur Docker Hub :
 https://hub.docker.com/r/moudou/library-api-api
 
 -->bash
+
 docker pull moudou/library-api-api
 
 
