@@ -110,8 +110,11 @@ SELECT * FROM loans;
 
 ---
 POST   /api/authors          Créer un auteur
+
 GET    /api/authors          Récupérer tous les auteurs
+
 GET    /api/authors/{id}     Récupérer un auteur spécifique
+
 DELETE /api/authors/{id}     Supprimer un auteur
 ---
 
@@ -127,10 +130,14 @@ Exemple POST :
 ### Catégories — `CATEGORIES`
 
 ---
-POST   /api/categories       : Créer une catégorie
-GET    /api/categories       : Récupérer toutes les catégories
-GET    /api/categories/{id}  : Récupérer une catégorie spécifique
-DELETE /api/categories/{id}  : Supprimer une catégorie
+
+POST   /api/categories        Créer une catégorie
+
+GET    /api/categories        Récupérer toutes les catégories
+
+GET    /api/categories/{id}   Récupérer une catégorie spécifique
+
+DELETE /api/categories/{id}   Supprimer une catégorie
 ---
 
 
@@ -167,9 +174,13 @@ Exemple POST :
 
 ---
 POST   /api/users              Créer un utilisateur
+
 GET    /api/users              Récupérer tous les utilisateurs
+
 GET    /api/users/{id}         Récupérer un utilisateur spécifique
+
 GET    /api/users/{id}/loans   Récupérer les emprunts d'un utilisateur
+
 DELETE /api/users/{id}         Supprimer un utilisateur
 --
 Exemple POST :
@@ -184,8 +195,11 @@ Exemple POST :
 ###  Emprunts — `LOANS`
 ---
 POST /api/loans              Créer un emprunt
+
 GET  /api/loans              Récupérer tous les emprunts
+
 GET  /api/loans/{id}         Récupérer un emprunt spécifique
+
 PUT  /api/loans/{id}/return  Retourner un livre
 
 
@@ -204,7 +218,8 @@ Exemple POST :
 pip install pytest httpx
 pytest tests/
 
-## Image Docker Hub
+=======
+##  Image Docker Hub
 
 L'image est disponible sur Docker Hub :
 https://hub.docker.com/r/moudou/library-api-api
