@@ -95,10 +95,15 @@ docker exec -it library-db mysql -u library_user -p
 Mot de passe : `library_pass`
 
 -->sql
+
 USE librarydb;
+
 SELECT * FROM authors;
+
 SELECT * FROM books;
+
 SELECT * FROM users;
+
 SELECT * FROM loans;
 
 
@@ -154,8 +159,11 @@ Exemple POST :
 ### Livres — `BOOKS`
 
 POST   /api/books        Créer un livre
+
 GET    /api/books        Récupérer tous les livres
+
 GET    /api/books/{id}   Récupérer un livre spécifique
+
 DELETE /api/books/{id}   Supprimer un livre
 
 Exemple POST :
