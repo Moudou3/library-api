@@ -246,5 +246,6 @@ docker pull moudou/library-api-api
 > Un volume Docker `library_data` est utilisé pour la persistance des données MySQL.
 
 ## Auteurs
-
-@mvmoudou
+- SIDIBE Mamoudou
+- BITARI Hajar
+- ZEGHOUD Sabrina
